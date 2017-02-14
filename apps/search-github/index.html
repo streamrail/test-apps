@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Search Github</title>
+  <link rel="stylesheet" media="all" href="vendor/auto-complete/auto-complete.css">
+  <style>
+    body {
+      font-family: 'Arial';
+    }
+    a[href="#"] {
+      color: #a1a1a1;
+      pointer-events: none;
+    }
+    table {
+      text-align: center;
+      border: 1px solid black
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+    }
+    input {
+      width: 50%;
+    }
+    a {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        border-radius: 5px;
+        font-size: 12px;
+
+        text-decoration: none;
+        color: initial;
+        padding: 2px 5px;
+    }
+
+    section {
+      flex-grow: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <section>
+      <h3>Search Github Repositories</h3>
+      <input id='q'/>&nbsp;<a id='repoLink' target="_blank" href='#'>Open Repo</a>
+    </section>
+    <section>
+      <h3>Cache</h3>
+      <button id='clearCache'>Clear Cache</button>
+      <br>
+      <br>
+      <table style='text-align:center;border:1px solid black'>
+        <tr>
+          <th>Hits</th>
+          <th>Misses</th>
+        </tr>
+        <tr>
+          <td id='hits'>0</td>
+          <td id='misses'>0</td>
+        </tr>
+      </table>
+    </section>  
+  </div>
+  
+  <script src="./vendor/systemjs/system.js"></script>
+  <script>
+    SystemJS.config({
+      map: {
+        'plugin-babel': './vendor/systemjs-plugin-babel/plugin-babel.js',
+        'systemjs-babel-build': './vendor/systemjs-plugin-babel/systemjs-babel-browser.js'
+      },
+      transpiler: 'plugin-babel'
+    })
+    SystemJS.import('./app.js');
+  </script>
+</body>
+</html>

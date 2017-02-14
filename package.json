@@ -1,0 +1,22 @@
+{
+  "name": "@streamrail/questions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/serve/bin/serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streamrail/questions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/streamrail/questions/issues"
+  },
+  "homepage": "https://github.com/streamrail/questions#readme",
+  "devDependencies": {
+    "serve": "^1.4.0"
+  }
+}
